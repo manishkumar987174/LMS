@@ -81,6 +81,30 @@
   margin-bottom: 10px;
 }
 
+select {
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 14px;
+  outline: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99,102,241,0.3);
+}
+
+select option {
+  background: #020617;
+  color: white;
+}
+
 /* Animation */
 @keyframes floatIn {
   from {

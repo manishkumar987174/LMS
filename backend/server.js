@@ -11,9 +11,10 @@ app.use(express.json());
 // ================= ROUTES =================
 app.use("/api/auth", require("./routes/authRoutes"));
 app.use("/api/institute", require("./routes/instituteRoutes"));
-app.use("/api/books", require("./routes/bookRoutes"));      // 📚 BOOKS
+app.use("/api/books", require("./routes/bookRoutes"));
 app.use("/api/course", require("./routes/courseRoutes"));
 app.use("/api/enroll", require("./routes/enrollRoutes"));
+app.use("/api/issue", require("./routes/issueRoutes")); // 👈 THIS
 app.use("/api/certificate", require("./routes/certificateRoutes"));
 app.use("/api/test", require("./routes/testRoutes"));
 // =========================================

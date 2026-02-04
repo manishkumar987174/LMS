@@ -8,6 +8,8 @@ import ManageBooks from "./pages/admin/ManageBooks.jsx";
 import ManageCourses from "./pages/admin/ManageCourses";
 import ManageUsers from "./pages/admin/ManageUsers";
 import ManageEnrollments from "./pages/admin/ManageEnrollments";
+import IssueBook from "./pages/admin/IssueBook.jsx";
+import MyIssuedBooks from "./pages/student/MyIssuedBooks";
 
 function App() {
   return (
@@ -25,10 +27,26 @@ function App() {
           }
         />
         <Route
+          path="/admin/issue"
+          element={
+            <PrivateRoute>
+              <IssueBook />
+            </PrivateRoute>
+          }
+        />
+        <Route
           path="/admin/courses"
           element={
             <PrivateRoute>
               <ManageCourses />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/student/issues"
+          element={
+            <PrivateRoute>
+              <MyIssuedBooks />
             </PrivateRoute>
           }
         />
