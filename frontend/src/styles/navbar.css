@@ -1,0 +1,56 @@
+.navbar {
+  height: 65px;
+  background: linear-gradient(90deg, #020617, #0f172a);
+  color: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #22d3ee;
+}
+
+/* Right section */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Role badge */
+.user-role {
+  background: rgba(99,102,241,0.2);
+  color: #c7d2fe;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid #6366f1;
+  text-transform: uppercase;
+}
+
+/* Logout button */
+.logout-btn {
+  background: linear-gradient(90deg,#ef4444,#f97316);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(239,68,68,0.8);
+}
