@@ -26,6 +26,10 @@ function Sidebar() {
           <NavLink to="/student/certificates" className={linkClass}>
             Certificates
           </NavLink>
+         <NavLink to="/student/reports" className={linkClass}>
+  Reports
+</NavLink>
+
 
           <NavLink to="/student/profile" className={linkClass}>
             Profile
@@ -54,6 +58,10 @@ function Sidebar() {
           <NavLink to="/admin/issue" className={linkClass}>
             Issue Book
           </NavLink>
+          <NavLink to="/admin/reports" className={linkClass}>
+  Reports
+</NavLink>
+
 
           <a
             href="#"

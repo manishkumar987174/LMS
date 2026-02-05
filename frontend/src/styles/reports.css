@@ -1,0 +1,20 @@
+.page-title {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #22d3ee;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 20px;
+}
+
+.report-card {
+  background: linear-gradient(135deg,#020617,#0f172a);
+  color: #e0f2fe;
+  padding: 20px;
+  border-radius: 14px;
+  font-size: 16px;
+  box-shadow: 0 0 20px rgba(34,211,238,0.2);
+}

@@ -17,6 +17,8 @@ app.use("/api/enroll", require("./routes/enrollRoutes"));
 app.use("/api/issue", require("./routes/issueRoutes")); // 👈 THIS
 app.use("/api/certificate", require("./routes/certificateRoutes"));
 app.use("/api/test", require("./routes/testRoutes"));
+app.use("/api/reports", require("./routes/reportRoutes"));
+// app.use("/api/reports", require("./routes/reportRoutes"));
 // =========================================
 
 // MongoDB

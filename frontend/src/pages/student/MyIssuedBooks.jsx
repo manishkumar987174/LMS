@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import api from "../../services/api";
 import Layout from "../../components/Layout";
 import "../../styles/issuedBooks.css";
+import { useNavigate } from "react-router-dom";
 
 function MyIssuedBooks() {
   const [issues, setIssues] = useState([]);
@@ -10,22 +11,45 @@ function MyIssuedBooks() {
     api.get("/issue/my").then((res) => setIssues(res.data));
   }, []);
 
-  const returnBook = async (id) => {
+//   const returnBook = async (id) => {
+//   try {
+//     const res = await api.post("/issue/return/" + id);
+//     console.log("RETURN RESPONSE:", res.data);
+//     alert("Returned. Fine: ₹" + res.data.fine);
+//     window.location.reload();
+//   } catch (err) {
+//     console.log("RETURN ERROR:", err.response?.data || err);
+//     alert("Return failed");
+//   }
+// };
+
+
+const navigate = useNavigate();
+const returnBook = async (id) => {
   try {
     const res = await api.post("/issue/return/" + id);
+
     console.log("RETURN RESPONSE:", res.data);
-    alert("Returned. Fine: ₹" + res.data.fine);
-    window.location.reload();
+
+    // 🔥 Redirect to Pay Fine page
+    navigate("/student/pay-fine", {
+      state: {
+        issueId: id,
+        fine: res.data.fine
+      }
+    });
+
   } catch (err) {
     console.log("RETURN ERROR:", err.response?.data || err);
     alert("Return failed");
   }
 };
 
+
   return (
     <Layout>
       <div className="issued-container">
-        <h2>My Issued Books</h2>
+        <h2 className="page-title">My Issued Books</h2>
 
         <table className="issued-table">
           <thead>

@@ -37,7 +37,7 @@ function IssueBook() {
 
   return (
     <Layout >
-      <h2 style={{color:"black"}}>Issue Book (Admin)</h2>
+      <h2 className="page-title">Issue Book (Admin)</h2>
 
       <select onChange={e => setUserId(e.target.value)}>
         <option>Select User</option>

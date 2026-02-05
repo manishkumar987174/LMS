@@ -9,11 +9,19 @@ const {
 } = require("../controllers/authController");
 
 const { verifyToken, allowRoles } = require("../middleware/authMiddleware");
+const User = require("../models/User");
 
+// Auth
 router.post("/register", register);
 router.post("/login", login);
 
-// Admin only routes
+// Logged in user profile
+router.get("/me", verifyToken, async (req, res) => {
+  const user = await User.findById(req.user.id).select("-password");
+  res.json(user);
+});
+
+// Admin only
 router.get("/users", verifyToken, allowRoles("admin"), getUsers);
 router.put("/toggle/:id", verifyToken, allowRoles("admin"), toggleUser);
 
