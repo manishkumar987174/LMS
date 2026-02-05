@@ -18,3 +18,36 @@
   font-size: 16px;
   box-shadow: 0 0 20px rgba(34,211,238,0.2);
 }
+
+.filter-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-box input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+}
+
+.filter-box button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+}
+
+.pdf-btn {
+  background: #22c55e;
+}
+
+.chart-box {
+  margin-top: 40px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}

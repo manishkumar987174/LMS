@@ -23,17 +23,26 @@ function Sidebar() {
             My Courses
           </NavLink>
 
-          <NavLink to="/student/certificates" className={linkClass}>
+          <NavLink to="/student/reports" className={linkClass}>
+            Reports
+          </NavLink>
+          {/* <NavLink
+            to="/student/"
+            className={linkClass}
+            style={{ cursor: "not-allowed", pointerEvents: "auto" }}
+            onClick={(e) => e.preventDefault()}
+          >
             Certificates
-          </NavLink>
-         <NavLink to="/student/reports" className={linkClass}>
-  Reports
-</NavLink>
-
-
-          <NavLink to="/student/profile" className={linkClass}>
+          </NavLink> */}
+{/* 
+          <NavLink
+            to="/student/"
+            className={linkClass}
+            style={{ cursor: "not-allowed", pointerEvents: "auto" }}
+            onClick={(e) => e.preventDefault()}
+          >
             Profile
-          </NavLink>
+          </NavLink> */}
         </>
       )}
 
@@ -59,9 +68,8 @@ function Sidebar() {
             Issue Book
           </NavLink>
           <NavLink to="/admin/reports" className={linkClass}>
-  Reports
-</NavLink>
-
+            Reports
+          </NavLink>
 
           <a
             href="#"

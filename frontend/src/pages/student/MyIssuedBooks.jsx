@@ -11,19 +11,6 @@ function MyIssuedBooks() {
     api.get("/issue/my").then((res) => setIssues(res.data));
   }, []);
 
-//   const returnBook = async (id) => {
-//   try {
-//     const res = await api.post("/issue/return/" + id);
-//     console.log("RETURN RESPONSE:", res.data);
-//     alert("Returned. Fine: ₹" + res.data.fine);
-//     window.location.reload();
-//   } catch (err) {
-//     console.log("RETURN ERROR:", err.response?.data || err);
-//     alert("Return failed");
-//   }
-// };
-
-
 const navigate = useNavigate();
 const returnBook = async (id) => {
   try {

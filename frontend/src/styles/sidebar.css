@@ -44,3 +44,15 @@
   background: none;
   transform: none;
 }
+
+p {
+  text-decoration: none;
+  color: #c7d2fe;
+  font-weight: 500;
+  padding: 10px 14px;
+  border-radius: 10px;
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
