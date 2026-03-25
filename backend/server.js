@@ -21,15 +21,15 @@ app.use("/api/reports", require("./routes/reportRoutes"));
 
 // MongoDB
 mongoose
-  .connect("mongodb+srv://backend:abcd12345@backend.sorrlwl.mongodb.net/lms")
+  .connect("mongodb://127.0.0.1:27017/library_saas")
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
+
 app.get("/", (req, res) => {
-  res.send("Library Backend Running ");
+  res.send("Library SaaS Backend Running ");
 });
 
-// Start server
 app.listen(5000, () => {
   console.log("Server running on port 5000");
 });
