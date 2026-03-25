@@ -24,7 +24,7 @@ function AdminReports() {
 
   if (!data) return <p style={{ padding: 20 }}>Loading...</p>;
 
-  /* ===== Chart Data ===== */
+  
   const chartData = {
     labels: ["Issued", "Returned"],
     datasets: [
@@ -36,7 +36,6 @@ function AdminReports() {
     ]
   };
 
-  /* ===== Export PDF ===== */
   const exportPDF = () => {
     const doc = new jsPDF();
     doc.text("Library Management - Admin Report", 20, 20);
@@ -52,7 +51,6 @@ function AdminReports() {
     <Layout>
       <h2 className="page-title">Admin Reports</h2>
 
-      {/* ===== DATE FILTER ===== */}
       <div className="filter-box">
         <input
           type="date"
@@ -70,7 +68,7 @@ function AdminReports() {
         </button>
       </div>
 
-      {/* ===== ANALYTICS CARDS ===== */}
+      {/* /* ANALYTICS CARDS  */ }
       <div className="report-grid">
         <div className="report-card">👥 Total Users <b>{data.totalUsers}</b></div>
         <div className="report-card">📚 Total Books <b>{data.totalBooks}</b></div>
@@ -81,7 +79,6 @@ function AdminReports() {
         </div>
       </div>
 
-      {/* ===== CHART ===== */}
       <div className="chart-box">
         <h3 className="page-title">Books Statistics</h3>
         <Bar data={chartData} />

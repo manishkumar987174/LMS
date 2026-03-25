@@ -2,31 +2,27 @@ const Issue = require("../models/Issue");
 const User = require("../models/User");
 const Book = require("../models/Book");
 
-/* ===============================
-   COMMON / OVERALL REPORT
-================================ */
+/*  OVERALL REPORT */
 exports.getReport = async (req, res) => {
   try {
     const totalIssued = await Issue.countDocuments();
     const returned = await Issue.countDocuments({ returned: true });
 
     const fineAgg = await Issue.aggregate([
-      { $group: { _id: null, total: { $sum: "$fine" } } }
+      { $group: { _id: null, total: { $sum: "$fine" } } },
     ]);
 
     res.json({
       totalIssued,
       returned,
-      totalFine: fineAgg[0]?.total || 0
+      totalFine: fineAgg[0]?.total || 0,
     });
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
 };
 
-/* ===============================
-   ADMIN REPORT
-================================ */
+/* ADMIN REPORT */
 exports.adminReport = async (req, res) => {
   try {
     const totalUsers = await User.countDocuments();
@@ -42,16 +38,14 @@ exports.adminReport = async (req, res) => {
       totalBooks,
       issuedBooks,
       returnedBooks,
-      totalFine
+      totalFine,
     });
   } catch (err) {
     res.status(500).json({ msg: err.message });
   }
 };
 
-/* ===============================
-   STUDENT REPORT
-================================ */
+/* STUDENT REPORT*/
 exports.studentReport = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -59,12 +53,12 @@ exports.studentReport = async (req, res) => {
     const issued = await Issue.countDocuments({ userId });
     const returned = await Issue.countDocuments({
       userId,
-      returned: true
+      returned: true,
     });
 
     const fines = await Issue.find({
       userId,
-      fine: { $gt: 0 }
+      fine: { $gt: 0 },
     });
 
     const totalFine = fines.reduce((sum, i) => sum + i.fine, 0);
@@ -72,7 +66,7 @@ exports.studentReport = async (req, res) => {
     res.json({
       issued,
       returned,
-      totalFine
+      totalFine,
     });
   } catch (err) {
     res.status(500).json({ msg: err.message });

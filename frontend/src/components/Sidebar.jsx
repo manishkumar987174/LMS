@@ -26,23 +26,7 @@ function Sidebar() {
           <NavLink to="/student/reports" className={linkClass}>
             Reports
           </NavLink>
-          {/* <NavLink
-            to="/student/"
-            className={linkClass}
-            style={{ cursor: "not-allowed", pointerEvents: "auto" }}
-            onClick={(e) => e.preventDefault()}
-          >
-            Certificates
-          </NavLink> */}
-{/* 
-          <NavLink
-            to="/student/"
-            className={linkClass}
-            style={{ cursor: "not-allowed", pointerEvents: "auto" }}
-            onClick={(e) => e.preventDefault()}
-          >
-            Profile
-          </NavLink> */}
+          
         </>
       )}
 

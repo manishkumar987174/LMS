@@ -13,7 +13,7 @@ function StudentReports() {
 
   const loadReport = async () => {
     const res = await api.get("/reports/student", {
-      params: { fromDate, toDate }
+      params: { fromDate, toDate },
     });
     setData(res.data);
   };
@@ -24,18 +24,16 @@ function StudentReports() {
 
   if (!data) return <p style={{ padding: 20 }}>Loading...</p>;
 
-  /* ===== Chart Data ===== */
   const chartData = {
     labels: ["Issued", "Returned"],
     datasets: [
       {
         data: [data.issued, data.returned],
-        backgroundColor: ["#6366f1", "#22c55e"]
-      }
-    ]
+        backgroundColor: ["#6366f1", "#22c55e"],
+      },
+    ],
   };
 
-  /* ===== Export PDF ===== */
   const exportPDF = () => {
     const doc = new jsPDF();
     doc.text("Student Library Report", 20, 20);
@@ -49,17 +47,16 @@ function StudentReports() {
     <Layout>
       <h2 className="page-title">My Library Report</h2>
 
-      {/* ===== DATE FILTER ===== */}
       <div className="filter-box">
         <input
           type="date"
           value={fromDate}
-          onChange={e => setFromDate(e.target.value)}
+          onChange={(e) => setFromDate(e.target.value)}
         />
         <input
           type="date"
           value={toDate}
-          onChange={e => setToDate(e.target.value)}
+          onChange={(e) => setToDate(e.target.value)}
         />
         <button onClick={loadReport}>Apply Filter</button>
         <button className="pdf-btn" onClick={exportPDF}>
@@ -67,19 +64,18 @@ function StudentReports() {
         </button>
       </div>
 
-      {/* ===== SUMMARY CARDS ===== */}
       <div className="report-grid">
         <div className="report-card">
-          📘 Books Issued <b>{data.issued}</b>
+          Books Issued <b>{data.issued}</b>
         </div>
         <div className="report-card">
-          ✅ Books Returned <b>{data.returned}</b>
+          Books Returned <b>{data.returned}</b>
         </div>
         <div className="report-card highlight">
-          💰 Total Fine <b>₹{data.totalFine}</b>
+          Total Fine <b>₹{data.totalFine}</b>
         </div>
       </div>
-      {/* ===== CHART ===== */}
+
       <div className="chart-box">
         <h3 className="page-title">My Reading Activity</h3>
         <Doughnut data={chartData} />

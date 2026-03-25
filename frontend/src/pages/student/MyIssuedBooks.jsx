@@ -18,7 +18,7 @@ const returnBook = async (id) => {
 
     console.log("RETURN RESPONSE:", res.data);
 
-    // 🔥 Redirect to Pay Fine page
+    // Redirect to Pay Fine page
     navigate("/student/pay-fine", {
       state: {
         issueId: id,

@@ -25,7 +25,6 @@ function StudentDashboard() {
     );
   }
 
-  // Dummy stats (later DB se la sakte ho)
   const stats = {
     total: 12,
     enrolled: 4,

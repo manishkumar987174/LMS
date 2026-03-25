@@ -12,7 +12,6 @@
   z-index: 100;
 }
 
-/* Logo */
 .logo {
   font-size: 22px;
   font-weight: bold;
@@ -20,14 +19,12 @@
   color: #22d3ee;
 }
 
-/* Right section */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
-/* Role badge */
 .user-role {
   background: rgba(99,102,241,0.2);
   color: #c7d2fe;

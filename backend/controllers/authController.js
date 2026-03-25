@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
       password: hashed,
       role,
       instituteId,
-      active: true   // 👈 default active
+      active: true   
     });
 
     res.json(user);
@@ -42,7 +42,7 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign(
       { id: user._id, role: user.role, instituteId: user.instituteId },
-      "SECRET123",          // 👈 SAME SECRET AS MIDDLEWARE
+      "SECRET123",          
       { expiresIn: "1d" }
     );
 

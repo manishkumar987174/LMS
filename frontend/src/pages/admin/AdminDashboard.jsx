@@ -6,8 +6,6 @@ function AdminDashboard() {
   return (
     <Layout>
       <h1 className="page-title">Admin Dashboard</h1>
-
-      {/* Top Stats */}
       <div className="stats-grid">
         <div className="stat-card">
           <h3>Total Books</h3>
@@ -27,15 +25,11 @@ function AdminDashboard() {
         </div>
       </div>
 
-      {/* Feature Grid */}
       <div className="feature-grid">
         <Link to="/admin/books" className="feature-card">
           📚 Manage Books
         </Link>
-        {/* <Link to="/admin/courses" className="feature-card">
-          🎓 Manage Courses
-        </Link> */}
-       
+
         <div className="feature-card">👨‍🎓 Students</div>
         <div className="feature-card">📖 Issues</div>
         <div className="feature-card">💰 Fines</div>
@@ -53,7 +47,6 @@ function AdminDashboard() {
         </ul>
       </div>
 
-      {/* Quick Actions */}
       <div className="dashboard-box">
         <h3>Quick Actions</h3>
         <div className="quick-actions">

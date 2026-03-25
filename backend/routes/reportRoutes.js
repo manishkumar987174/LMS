@@ -11,10 +11,7 @@ const {
   allowRoles
 } = require("../middleware/authMiddleware");
 
-/**
- * ADMIN REPORTS
- * URL: /api/reports/admin
- */
+
 router.get(
   "/admin",
   verifyToken,
@@ -22,10 +19,7 @@ router.get(
   adminReport
 );
 
-/**
- * STUDENT REPORTS
- * URL: /api/reports/student
- */
+
 router.get(
   "/student",
   verifyToken,

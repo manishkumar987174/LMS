@@ -30,7 +30,7 @@ function IssueBook() {
 
     alert("Book issued successfully!");
   } catch (err) {
-    alert("Issue failed");
+    alert("Issue failed",err);
   }
 };
 

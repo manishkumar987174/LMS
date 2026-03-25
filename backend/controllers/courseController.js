@@ -1,6 +1,5 @@
 const Course = require("../models/Course");
 
-// Create course (Admin/Instructor)
 exports.createCourse = async (req, res) => {
   const { title, description, price } = req.body;
 

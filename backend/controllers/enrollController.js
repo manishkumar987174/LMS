@@ -17,7 +17,6 @@ exports.enrollCourse = async (req, res) => {
   }
 };
 
-// My courses
 exports.myCourses = async (req, res) => {
   try {
     const courses = await Enrollment.find({
@@ -30,7 +29,6 @@ exports.myCourses = async (req, res) => {
   }
 };
 
-// Complete course
 exports.completeCourse = async (req, res) => {
   try {
     const { courseId } = req.body;

@@ -1,8 +1,6 @@
 const Certificate = require("../models/Certificate");
 const Enrollment = require("../models/Enrollment");
 const PDFDocument = require("pdfkit");
-
-// Generate certificate
 exports.generateCertificate = async (req, res) => {
   const { courseId } = req.body;
 
