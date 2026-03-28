@@ -1,11 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
-
+const dotenv = require("dotenv")
+dotenv.config()
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors()); 
 app.use(express.json());
 
 // ROUTES
@@ -21,15 +22,15 @@ app.use("/api/reports", require("./routes/reportRoutes"));
 
 // MongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/library_saas")
+  .connect(process.env.MONGOOSE_URL)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log("Mongo Error:", err));
 
 
 app.get("/", (req, res) => {
-  res.send("Library SaaS Backend Running ");
+  res.send("Library Backend Running ");
 });
 
 app.listen(5000, () => {
-  console.log("Server running on port 5000");
+  console.log("Server running on port 5000"); 
 });

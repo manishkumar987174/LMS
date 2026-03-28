@@ -6,7 +6,7 @@ const jwt = require("jsonwebtoken");
 exports.register = async (req, res) => {
   try {
     const { name, email, password, role, instituteId } = req.body;
-
+    console.log(req.body);
     const hashed = await bcrypt.hash(password, 10);
 
     const user = await User.create({
@@ -15,7 +15,7 @@ exports.register = async (req, res) => {
       password: hashed,
       role,
       instituteId,
-      active: true   
+      active: true,
     });
 
     res.json(user);
@@ -30,20 +30,17 @@ exports.login = async (req, res) => {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    if (!user)
-      return res.status(400).json({ msg: "User not found" });
+    if (!user) return res.status(400).json({ msg: "User not found" });
 
-    if (!user.active)
-      return res.status(403).json({ msg: "Account blocked" });
+    if (!user.active) return res.status(403).json({ msg: "Account blocked" });
 
     const match = await bcrypt.compare(password, user.password);
-    if (!match)
-      return res.status(400).json({ msg: "Wrong password" });
+    if (!match) return res.status(400).json({ msg: "Wrong password" });
 
     const token = jwt.sign(
       { id: user._id, role: user.role, instituteId: user.instituteId },
-      "SECRET123",          
-      { expiresIn: "1d" }
+      "SECRET123",
+      { expiresIn: "1d" },
     );
 
     res.json({ token, role: user.role });

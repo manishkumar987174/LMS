@@ -11,6 +11,7 @@ function Register() {
   const navigate = useNavigate();
 
   const register = async () => {
+    console.log(name,email,password,role);
     try {
       await api.post("/auth/register", {
         name,
