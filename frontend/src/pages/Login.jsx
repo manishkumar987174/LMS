@@ -11,9 +11,7 @@ function Login() {
 
   const login = async () => {
     try {
-        console.log("SENDING:", email, password);
       const res = await api.post("/auth/login", { email, password });
-      console.log("RESPONSE:", res.data);
 
       sessionStorage.setItem("token", res.data.token);
       sessionStorage.setItem("role", res.data.role);
