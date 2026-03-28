@@ -16,7 +16,7 @@ const returnBook = async (id) => {
   try {
     const res = await api.post("/issue/return/" + id);
 
-    console.log("RETURN RESPONSE:", res.data);
+    // console.log("RETURN RESPONSE:", res.data);
 
     // Redirect to Pay Fine page
     navigate("/student/pay-fine", {
